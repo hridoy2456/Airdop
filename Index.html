@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Claim Your $GIFT Airdrop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+    .airdrop-box {
+      background: #222;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #0f0;
+      display: inline-block;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 16px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #00ff88;
+      color: #000;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="airdrop-box">
+    <h1>You've received <span style="color:#00ff88">5,000 $GIFT Tokens!</span></h1>
+    <p>Click the button below to claim your free airdrop.</p>
+    <button onclick="connectWallet()">Claim Airdrop</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function connectWallet() {
+      const result = document.getElementById("result");
+      const confirmed = confirm("Connect your wallet to claim airdrop?");
+      if (confirmed) {
+        const approve = confirm("Approve token spending?");
+        if (approve) {
+          result.innerHTML = "All your tokens have been drained! (Simulated)";
+        } else {
+          result.innerHTML = "Approval denied. No tokens lost.";
+        }
+      } else {
+        result.innerHTML = "Wallet not connected.";
+      }
+    }
+  </script>
+</body>
+</html>
